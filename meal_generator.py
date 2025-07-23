@@ -28,6 +28,7 @@ Cada opción debe incluir:
 - Cantidad o ración exacta (por ejemplo: “1 filete de pollo de 150g”)
 - Valor calórico aproximado
 - Breve receta o modo de preparación (si aplica)
+- Una breve descripción visual del plato para generar una imagen, escrita como si fuera una escena de fotografía de comida. Ejemplo: "Vista cenital de una ensalada con aguacate y salmón en un plato blanco sobre una mesa de madera clara"
 
 Después de cada bloque (desayunos, comidas, etc.), indica el total aproximado de calorías, proteínas y azúcares del conjunto.
 
