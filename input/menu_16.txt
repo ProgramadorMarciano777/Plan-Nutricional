@@ -1,0 +1,16 @@
+Food_Blended_Strawberry_Margarita = 1.0
+Food_Kool_aid_Tropical_Punch = 1.0
+Food_Kraft_Mac_and_Cheese = 1.0
+Food_Milano_double_chocolate_ = 0.5
+Food_Quaker_Smores_Granola_Bar = 1.0
+Food_avocado = 3.0
+Food_beef_angus_burger_patty = 0.5
+Food_double_chocolate_chip_cookie = 1.0
+Food_eggs_benedict = 1.5
+Food_sour_cream = 1.0
+Food_tortilla_chips = 1.0
+Food_white_rice = 1.0
+--------------------------
+energy = 2495.25
+protein = 62.21
+sugar = 64.13

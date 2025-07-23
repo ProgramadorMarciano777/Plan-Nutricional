@@ -1,0 +1,99 @@
+Based on the available items and the user's nutritional targets, here are three meal plan options. Each plan includes breakfast, lunch, dinner, and snacks, with recipes and nutritional breakdowns.
+
+### Meal Plan Option 1
+
+**Breakfast:**
+- Berry Cheerios (1 cup) with Skim Milk (1 cup)
+  - Recipe: Pour 1 cup of Berry Cheerios into a bowl and add 1 cup of skim milk. Enjoy with a spoon.
+  - Calories: 200 kcal
+
+**Lunch:**
+- Angus Beef Burger
+  - Ingredients: 1 beef angus burger patty, 1 leaf of lettuce
+  - Recipe: Grill the angus beef patty for about 5 minutes on each side until fully cooked. Place on a bun with a leaf of lettuce.
+  - Calories: 450 kcal
+
+**Dinner:**
+- Egg Salad
+  - Ingredients: 2 eggs, lettuce
+  - Recipe: Boil the eggs for 10 minutes. Chop them and mix with chopped lettuce. Optionally, add a pinch of salt or pepper.
+  - Calories: 300 kcal
+
+**Snacks:**
+- Quaker S'mores Granola Bar (1 bar)
+  - Recipe: Enjoy as is.
+  - Calories: 100 kcal
+- Clementine (1 fruit)
+  - Recipe: Peel and enjoy.
+  - Calories: 35 kcal
+
+**Total Daily Nutrition:**
+- Total Calories: 1085 kcal
+- Total Protein: 57g
+- Total Sugar: 39g
+
+### Meal Plan Option 2
+
+**Breakfast:**
+- Krave Chocolate Cereal (0.5 cup) with Skim Milk (0.5 cup)
+  - Recipe: Pour 0.5 cup of Krave Chocolate Cereal into a bowl and add 0.5 cup of skim milk. Enjoy with a spoon.
+  - Calories: 150 kcal
+
+**Lunch:**
+- Creamy Lettuce Wraps
+  - Ingredients: 1 egg, lettuce, 1 tablespoon of mayonnaise (optional)
+  - Recipe: Hard boil the egg, chop, and mix with mayonnaise. Wrap the mixture in lettuce leaves.
+  - Calories: 200 kcal
+
+**Dinner:**
+- Beef Burger with Crackers
+  - Ingredients: 1 beef angus burger patty, 1 leaf of lettuce, 5 Milton's Original Multi Grain Crackers
+  - Recipe: Grill the beef angus patty for 5 minutes on each side. Serve with a leaf of lettuce and crackers on the side.
+  - Calories: 500 kcal
+
+**Snacks:**
+- Clementine (1 fruit)
+  - Recipe: Peel and enjoy.
+  - Calories: 35 kcal
+- Lay's Sour Cream and Onion Potato Chips (15 chips)
+  - Recipe: Enjoy as is.
+  - Calories: 100 kcal
+
+**Total Daily Nutrition:**
+- Total Calories: 985 kcal
+- Total Protein: 50g
+- Total Sugar: 30g
+
+### Meal Plan Option 3
+
+**Breakfast:**
+- Berry Cheerios (1 cup) with Skim Milk (0.5 cup)
+  - Recipe: Pour 1 cup of Berry Cheerios into a bowl and add 0.5 cup of skim milk. Enjoy with a spoon.
+  - Calories: 170 kcal
+
+**Lunch:**
+- Egg and Lettuce Sandwich
+  - Ingredients: 1 egg, lettuce, 2 slices of whole-grain bread (optional)
+  - Recipe: Boil the egg, slice it, and place it with lettuce between two slices of whole-grain bread.
+  - Calories: 350 kcal
+
+**Dinner:**
+- S'mores Granola Bar Crumble
+  - Ingredients: 1 Quaker S'mores Granola Bar, skim milk (0.5 cup)
+  - Recipe: Crumble the granola bar and serve with a half cup of skim milk.
+  - Calories: 250 kcal
+
+**Snacks:**
+- Clementine (1 fruit)
+  - Recipe: Peel and enjoy.
+  - Calories: 35 kcal
+- Kool-Aid Tropical Punch (1 cup)
+  - Recipe: Mix Kool-Aid powder with water as per package instructions.
+  - Calories: 60 kcal
+
+**Total Daily Nutrition:**
+- Total Calories: 865 kcal
+- Total Protein: 45g
+- Total Sugar: 35g
+
+Each meal plan provides a balanced nutritional profile, though they do not fully meet the specified targets. Consider incorporating additional protein sources or adjusting portion sizes for better alignment, as this plan uses only the available items.

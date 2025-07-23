@@ -1,0 +1,126 @@
+Based on the available items and the specified nutritional targets, here are three meal plan options. Each plan aims to meet the total daily calories, protein, and sugar targets. Note that portion sizes are adjusted to fit the available items and goal requirements. 
+
+### Meal Plan Option 1
+
+**Breakfast:**
+- **1 serving of Eggs Benedict (1.5 portions)**
+  - *Recipe:* Toast the white bread, poach two eggs, and serve on the toast with hollandaise sauce and turkey slices.
+  - **Calories:** 440 kcal
+  - **Protein:** 24g
+  - **Sugar:** 3g
+
+**Lunch:**
+- **Tofu Pad Thai (0.5 portion)**
+  - *Recipe:* Stir-fry tofu with rice noodles, bean sprouts, and Pad Thai sauce. Garnish with peanuts and lime.
+  - **Calories:** 350 kcal
+  - **Protein:** 15g
+  - **Sugar:** 5g
+
+**Dinner:**
+- **Beef Angus Burger Patty with Guacamole and Lettuce (1.0 patty, 1.0 guacamole, 0.5 lettuce)**
+  - *Recipe:* Grill the beef patty and serve on a lettuce wrap topped with guacamole and tomato slices.
+  - **Calories:** 600 kcal
+  - **Protein:** 35g
+  - **Sugar:** 2g
+
+**Snacks:**
+- **Belvita Chocolate Breakfast Sandwich (0.5 portion)**
+  - *Recipe:* Enjoy as is.
+  - **Calories:** 150 kcal
+  - **Protein:** 3g
+  - **Sugar:** 8g
+
+- **M&M Cookie (0.5 portion)**
+  - *Recipe:* Enjoy as is.
+  - **Calories:** 100 kcal
+  - **Protein:** 2g
+  - **Sugar:** 10g
+
+**Total Daily Intake:**
+- **Calories:** 1640 kcal
+- **Protein:** 79g
+- **Sugar:** 28g
+
+### Meal Plan Option 2
+
+**Breakfast:**
+- **Pillsbury Cinnamon Roll (0.5 portion)**
+  - *Recipe:* Bake according to package instructions and enjoy warm.
+  - **Calories:** 150 kcal
+  - **Protein:** 2g
+  - **Sugar:** 12g
+
+**Lunch:**
+- **Turkey Sandwich with Gouda and Lettuce (0.5 turkey, 0.5 gouda, 0.5 lettuce, 1.0 white bread toast)**
+  - *Recipe:* Layer turkey and gouda cheese on toasted white bread with a leaf of lettuce.
+  - **Calories:** 350 kcal
+  - **Protein:** 26g
+  - **Sugar:** 3g
+
+**Dinner:**
+- **Tofu Pad Thai (0.5 portion)**
+  - *Recipe:* Stir-fry tofu with rice noodles, bean sprouts, and Pad Thai sauce. Garnish with peanuts and lime.
+  - **Calories:** 350 kcal
+  - **Protein:** 15g
+  - **Sugar:** 5g
+
+**Snacks:**
+- **Mini Donut with Powdered Sugar (0.5 portion)**
+  - *Recipe:* Enjoy as is.
+  - **Calories:** 200 kcal
+  - **Protein:** 2g
+  - **Sugar:** 10g
+
+- **Corn Salsa with Tortilla Chips (0.5 salsa, 0.5 chips)**
+  - *Recipe:* Serve corn salsa with tortilla chips for dipping.
+  - **Calories:** 180 kcal
+  - **Protein:** 4g
+  - **Sugar:** 6g
+
+**Total Daily Intake:**
+- **Calories:** 1610 kcal
+- **Protein:** 49g
+- **Sugar:** 36g
+
+### Meal Plan Option 3
+
+**Breakfast:**
+- **Glazed Donut (0.5 portion)**
+  - *Recipe:* Enjoy as is.
+  - **Calories:** 180 kcal
+  - **Protein:** 3g
+  - **Sugar:** 10g
+
+**Lunch:**
+- **Eggs Benedict (1.5 portions)**
+  - *Recipe:* Toast the white bread, poach two eggs, and serve on the toast with hollandaise sauce and turkey slices.
+  - **Calories:** 440 kcal
+  - **Protein:** 24g
+  - **Sugar:** 3g
+
+**Dinner:**
+- **Guacamole Bowl with Fajita Veggies and Tortilla Chips (0.5 guacamole bowl, 0.5 fajita veggies, 0.5 tortilla chips)**
+  - *Recipe:* Mix guacamole with grilled fajita veggies. Serve with tortilla chips.
+  - **Calories:** 500 kcal
+  - **Protein:** 10g
+  - **Sugar:** 5g
+
+**Snacks:**
+- **Belvita Chocolate Breakfast Sandwich (0.5 portion)**
+  - *Recipe:* Enjoy as is.
+  - **Calories:** 150 kcal
+  - **Protein:** 3g
+  - **Sugar:** 8g
+
+- **M&M Cookie (0.5 portion)**
+  - *Recipe:* Enjoy as is.
+  - **Calories:** 100 kcal
+  - **Protein:** 2g
+  - **Sugar:** 10g
+
+**Total Daily Intake:**
+- **Calories:** 1680 kcal
+- **Protein:** 42g
+- **Sugar:** 36g
+
+Please note that slight variations in the nutritional content can occur due to specific brand differences and preparation methods. Adjust portion sizes as needed to precisely meet your targets.

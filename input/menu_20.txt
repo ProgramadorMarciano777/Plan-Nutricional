@@ -1,0 +1,15 @@
+Food_Chef_Boyardee_Ravioli = 1.0
+Food_avocado = 1.5
+Food_baked_cheddar_ruffles = 2.0
+Food_beef_angus_burger_patty = 1.0
+Food_chicken_taco = 1.5
+Food_clementine = 2.0
+Food_double_chocolate_chip_cookie = 2.5
+Food_guacamole_bowl = 2.0
+Food_mini_donut_powdered_sugar = 3.0
+Food_pringles = 5.5
+Food_sour_cream = 2.0
+--------------------------
+energy = 2556.7
+protein = 82.17
+sugar = 75.1

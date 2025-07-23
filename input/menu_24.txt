@@ -1,0 +1,15 @@
+Food_Blended_Strawberry_Margarita = 1.0
+Food_Chef_Boyardee_Ravioli = 1.0
+Food_Pillsbury_Cinnamon_Roll = 0.5
+Food_Starbuck_strawberry_acai_refresher = 1.5
+Food_avocado = 5.0
+Food_beef_angus_burger_patty = 0.5
+Food_eggs_benedict = 0.5
+Food_gouda_cheese = 1.0
+Food_sour_cream = 2.0
+Food_sourdough_bread = 1.0
+Food_tortilla_chips = 2.5
+--------------------------
+energy = 2686.25
+protein = 60.24
+sugar = 49.36

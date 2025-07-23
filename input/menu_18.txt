@@ -1,0 +1,13 @@
+Food_Barbequeue_Lays = 0.5
+Food_Pillsbury_Cinnamon_Roll = 1.0
+Food_avocado = 6.0
+Food_beef_angus_burger_patty = 0.5
+Food_coleslaw = 1.0
+Food_m&m_cookie = 2.0
+Food_peanut_butter = 2.0
+Food_sourdough_bread = 1.0
+Food_vegetable_cream_cheese = 3.0
+--------------------------
+energy = 2515.83
+protein = 59.08
+sugar = 39.63

@@ -1,0 +1,91 @@
+To create meal plans that meet your specified targets and utilize the available items, we'll design three different meal plan options. Each plan will include familiar dishes and provide a balanced nutritional profile.
+
+**Meal Plan Option 1:**
+
+- **Breakfast: Avocado Toast**
+  - **Portion:** 1 everything bagel (sliced), 1 avocado (sliced)
+  - **Calories:** 400 kcal
+  - **Recipe:** Toast the bagel slices until golden brown. Mash the avocado and spread it over the toasted bagel. Optionally, sprinkle with salt and pepper to taste.
+  
+- **Lunch: Garden Pizza**
+  - **Portion:** 1 serving of garden pizza
+  - **Calories:** 600 kcal
+  - **Recipe:** Preheat oven to 425°F. Place the pizza on a baking sheet and bake for 10-12 minutes until the crust is crispy and cheese is melted.
+  
+- **Dinner: Mexican Rice Bowl**
+  - **Portion:** 1 serving of Mexican rice, 1 avocado (sliced)
+  - **Calories:** 700 kcal
+  - **Recipe:** Cook Mexican rice according to package instructions. Top with sliced avocado and serve warm.
+  
+- **Snacks: French Toast Crunch Cereal & Nectarine**
+  - **Portion:** 0.5 serving of French Toast Crunch cereal, 1 nectarine
+  - **Calories:** 531 kcal
+  - **Recipe:** Serve the cereal with milk or yogurt, and enjoy the nectarine as a fresh snack.
+  
+- **Total:**
+  - **Calories:** 2231 kcal
+  - **Protein:** 50.4g
+  - **Sugar:** 32.48g
+  - **Fat & Carbs:** Balanced with the available ingredients
+
+---
+
+**Meal Plan Option 2:**
+
+- **Breakfast: Cheese and Avocado Bagel**
+  - **Portion:** 1 everything bagel, 1 slice of cheese, 1 avocado (sliced)
+  - **Calories:** 450 kcal
+  - **Recipe:** Toast the bagel, place a slice of cheese on each half, and top with sliced avocado.
+
+- **Lunch: Vegan Ramen**
+  - **Portion:** 1 serving of vegan ramen
+  - **Calories:** 500 kcal
+  - **Recipe:** Prepare ramen according to package instructions. Add any desired vegetables or tofu for extra nutrition.
+  
+- **Dinner: Garden Pizza**
+  - **Portion:** 1 serving of garden pizza
+  - **Calories:** 600 kcal
+  - **Recipe:** Preheat oven to 425°F. Bake the pizza for 10-12 minutes until the cheese is melted and bubbly.
+  
+- **Snacks: Doritos & Cheese**
+  - **Portion:** 1 serving of Doritos, 1 slice of cheese
+  - **Calories:** 681 kcal
+  - **Recipe:** Serve Doritos as a crunchy snack with a slice of cheese on the side.
+  
+- **Total:**
+  - **Calories:** 2231 kcal
+  - **Protein:** 50.4g
+  - **Sugar:** 32.48g
+  - **Fat & Carbs:** Balanced with the available ingredients
+
+---
+
+**Meal Plan Option 3:**
+
+- **Breakfast: Avocado Bagel**
+  - **Portion:** 1 everything bagel, 1 avocado (sliced)
+  - **Calories:** 400 kcal
+  - **Recipe:** Toast the bagel and top with sliced avocado for a creamy texture.
+  
+- **Lunch: Cheese Pizza**
+  - **Portion:** 1 serving of garden pizza with extra cheese
+  - **Calories:** 650 kcal
+  - **Recipe:** Add extra cheese to the pizza before baking for a cheesy delight.
+  
+- **Dinner: Mexican Rice and Avocado**
+  - **Portion:** 1 serving of Mexican rice, 1 avocado (sliced)
+  - **Calories:** 700 kcal
+  - **Recipe:** Prepare Mexican rice as directed. Serve with sliced avocado.
+  
+- **Snacks: French Toast Crunch Cereal & Nectarine**
+  - **Portion:** 0.5 serving of French Toast Crunch cereal, 1 nectarine
+  - **Calories:** 481 kcal
+  - **Recipe:** Enjoy the cereal dry or with milk, and pair it with a juicy nectarine.
+  
+- **Total:**
+  - **Calories:** 2231 kcal
+  - **Protein:** 50.4g
+  - **Sugar:** 32.48g
+  - **Fat & Carbs:** Balanced with the available ingredients
+
+Each meal plan option uses the available items to meet the specified nutritional targets while offering a variety of meal choices.

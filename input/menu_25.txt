@@ -1,0 +1,17 @@
+Food_Blended_Strawberry_Margarita = 1.5
+Food_Doritoes = 3.0
+Food_Kraft_Mac_and_Chees_Microwavable_cup = 0.5
+Food_Maple_CrÃ¨me_Bruele = 1.0
+Food_baked_beans = 1.5
+Food_brocoli_slaw = 1.0
+Food_brownie = 2.0
+Food_cheese_bowl = 2.0
+Food_chocolate_chip_Cliff_Bar = 1.0
+Food_m&m_cookie = 1.0
+Food_nectarine = 1.0
+Food_onion = 1.0
+Food_vegetable_cream_cheese = 1.0
+--------------------------
+energy = 2604.5
+protein = 60.42
+sugar = 146.81

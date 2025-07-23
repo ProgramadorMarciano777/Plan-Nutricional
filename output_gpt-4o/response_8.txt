@@ -1,0 +1,107 @@
+Based on the available food items and nutritional goals, here's a meal plan that incorporates familiar dishes while meeting the specified targets. Each meal plan option includes breakfast, lunch, dinner, and snacks.
+
+### Meal Plan Option 1:
+
+**Breakfast:**
+- **Eggs Benedict**
+  - **Portion Size:** 1 serving
+  - **Calories:** 400 kcal
+  - **Recipe:** Toast an English muffin. Poach two eggs. Layer with ham or spinach. Pour hollandaise sauce over the top.
+
+**Lunch:**
+- **Garden Pizza**
+  - **Portion Size:** 1 serving (slice)
+  - **Calories:** 600 kcal
+  - **Recipe:** Spread tomato sauce on pizza dough. Top with mozzarella cheese, bell peppers, mushrooms, and onions. Bake at 200°C (400°F) for 15 minutes.
+
+**Dinner:**
+- **Beef Angus Burger**
+  - **Portion Size:** 1 burger with patty
+  - **Calories:** 700 kcal
+  - **Recipe:** Grill the beef Angus patty for 5 minutes per side. Assemble with lettuce, tomato, and a bun.
+
+**Snacks:**
+- **Avocado**
+  - **Portion Size:** 1 avocado
+  - **Calories:** 250 kcal
+  - **Recipe:** Slice and enjoy with a sprinkle of salt and pepper.
+- **Milano Double Chocolate**
+  - **Portion Size:** 0.5 serving
+  - **Calories:** 100 kcal
+
+**Total for Meal Plan Option 1:**
+- **Calories:** 2050 kcal
+- **Protein:** 70g
+- **Sugar:** 45g
+
+---
+
+### Meal Plan Option 2:
+
+**Breakfast:**
+- **Avocado Toast**
+  - **Portion Size:** 2 slices of whole-grain bread topped with 1 avocado
+  - **Calories:** 450 kcal
+  - **Recipe:** Toast bread. Mash avocado and spread over toast. Sprinkle with salt, pepper, and chili flakes.
+
+**Lunch:**
+- **Beef Angus Burger**
+  - **Portion Size:** 1 burger with patty
+  - **Calories:** 700 kcal
+  - **Recipe:** Grill the beef Angus patty for 5 minutes per side. Assemble with lettuce, tomato, and a bun.
+
+**Dinner:**
+- **Garden Pizza**
+  - **Portion Size:** 1 serving (slice)
+  - **Calories:** 600 kcal
+  - **Recipe:** Spread tomato sauce on pizza dough. Top with mozzarella cheese, bell peppers, mushrooms, and onions. Bake at 200°C (400°F) for 15 minutes.
+
+**Snacks:**
+- **Barbeque Lays**
+  - **Portion Size:** 1 bag
+  - **Calories:** 200 kcal
+- **Milano Double Chocolate**
+  - **Portion Size:** 0.5 serving
+  - **Calories:** 100 kcal
+
+**Total for Meal Plan Option 2:**
+- **Calories:** 2050 kcal
+- **Protein:** 68g
+- **Sugar:** 46g
+
+---
+
+### Meal Plan Option 3:
+
+**Breakfast:**
+- **Chocolate Milkshake**
+  - **Portion Size:** 1 glass
+  - **Calories:** 350 kcal
+  - **Recipe:** Blend 1 cup of milk with 2 scoops of chocolate ice cream and a tablespoon of chocolate syrup.
+
+**Lunch:**
+- **Eggs Benedict**
+  - **Portion Size:** 1 serving
+  - **Calories:** 400 kcal
+  - **Recipe:** Toast an English muffin. Poach two eggs. Layer with ham or spinach. Pour hollandaise sauce over the top.
+
+**Dinner:**
+- **Garden Pizza**
+  - **Portion Size:** 1 serving (slice)
+  - **Calories:** 600 kcal
+  - **Recipe:** Spread tomato sauce on pizza dough. Top with mozzarella cheese, bell peppers, mushrooms, and onions. Bake at 200°C (400°F) for 15 minutes.
+
+**Snacks:**
+- **Tortilla Chips**
+  - **Portion Size:** 1 bag
+  - **Calories:** 200 kcal
+- **Baked Cheddar Ruffles**
+  - **Portion Size:** 1 bag
+  - **Calories:** 100 kcal
+
+**Total for Meal Plan Option 3:**
+- **Calories:** 1650 kcal
+- **Protein:** 65g
+- **Sugar:** 47g
+
+These meal plans are designed to meet the daily caloric, protein, and sugar targets, with slight adjustments based on the available food items. Please note that due to the limited selection, some nutritional goals might not match exactly. Adjustments can be made by incorporating additional food items if needed.

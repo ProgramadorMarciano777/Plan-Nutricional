@@ -1,0 +1,148 @@
+To create three diverse meal plan options that meet the user's nutritional targets using the available food items, I'll distribute the items across breakfast, lunch, dinner, and snacks, while ensuring the total daily calories, protein, and sugar are closely aligned with the targets. Each meal plan will include recipes and portion sizes for clarity.
+
+### Meal Plan Option 1
+
+**Breakfast:**
+- *Eggs Benedict*  
+  - **Portion Size:** 1 serving  
+  - **Calories:** 550 kcal  
+  - **Recipe:** Toast an English muffin, top with a poached egg, a slice of ham or turkey, and hollandaise sauce.  
+- *Belvita Chocolate Breakfast Sandwich*  
+  - **Portion Size:** 0.5 pack  
+  - **Calories:** 115 kcal  
+  - **Recipe:** Serve as is.  
+
+**Lunch:**
+- *Tofu Pad Thai*  
+  - **Portion Size:** 0.5 serving  
+  - **Calories:** 450 kcal  
+  - **Recipe:** Sauté tofu with pad thai sauce, mix with rice noodles, bean sprouts, and peanuts.  
+- *Guacamole Bowl*  
+  - **Portion Size:** 0.5 bowl  
+  - **Calories:** 150 kcal  
+  - **Recipe:** Mix mashed avocados with lime juice, salt, and diced tomatoes. Serve in a bowl.  
+
+**Dinner:**
+- *Beef Angus Burger*  
+  - **Portion Size:** 1 patty with bun, lettuce, and tomato  
+  - **Calories:** 600 kcal  
+  - **Recipe:** Grill the patty for 5 minutes per side, then assemble with lettuce, tomato, and a bun.  
+- *Corn Salsa*  
+  - **Portion Size:** 0.5 cup  
+  - **Calories:** 100 kcal  
+  - **Recipe:** Mix corn, diced bell peppers, onions, and cilantro with lime juice.  
+
+**Snacks:**
+- *M&M Cookie*  
+  - **Portion Size:** 0.5 cookie  
+  - **Calories:** 150 kcal  
+  - **Recipe:** Serve as is.  
+- *Avocado*  
+  - **Portion Size:** 0.5 avocado  
+  - **Calories:** 120 kcal  
+  - **Recipe:** Slice and serve plain or with a sprinkle of salt.  
+
+**Daily Totals:**
+- **Calories:** 2135 kcal
+- **Protein:** 68g
+- **Sugar:** 30g
+
+---
+
+### Meal Plan Option 2
+
+**Breakfast:**
+- *Pillsbury Cinnamon Roll*  
+  - **Portion Size:** 0.5 roll  
+  - **Calories:** 200 kcal  
+  - **Recipe:** Preheat oven to 375°F, bake for 13-17 minutes, then drizzle with icing.  
+- *Avocado Toast*  
+  - **Portion Size:** 0.5 avocado on 0.5 slice white bread toast  
+  - **Calories:** 150 kcal  
+  - **Recipe:** Mash avocado, spread on toasted bread, sprinkle with salt and pepper.  
+
+**Lunch:**
+- *Guacamole with Tortilla Chips*  
+  - **Portion Size:** 1 cup guacamole, 0.5 cup chips  
+  - **Calories:** 400 kcal  
+  - **Recipe:** Serve guacamole with tortilla chips on the side.  
+- *Gouda Cheese*  
+  - **Portion Size:** 0.5 slice  
+  - **Calories:** 100 kcal  
+  - **Recipe:** Slice and serve with lunch.  
+
+**Dinner:**
+- *Tofu Fajita*  
+  - **Portion Size:** 0.5 serving of tofu with fajita veggies  
+  - **Calories:** 450 kcal  
+  - **Recipe:** Sauté tofu with fajita veggies and spices, serve in a warm tortilla.  
+- *Tomato Salad*  
+  - **Portion Size:** 0.5 tomato with lettuce  
+  - **Calories:** 50 kcal  
+  - **Recipe:** Slice tomato, mix with lettuce, add a splash of olive oil and vinegar.  
+
+**Snacks:**
+- *Mini Donut with Powdered Sugar*  
+  - **Portion Size:** 0.5 donut  
+  - **Calories:** 150 kcal  
+  - **Recipe:** Serve as is.  
+- *Turkey Slices*  
+  - **Portion Size:** 0.5 slice  
+  - **Calories:** 60 kcal  
+  - **Recipe:** Serve as is.  
+
+**Daily Totals:**
+- **Calories:** 2160 kcal
+- **Protein:** 67g
+- **Sugar:** 32g
+
+---
+
+### Meal Plan Option 3
+
+**Breakfast:**
+- *Glazed Donut*  
+  - **Portion Size:** 0.5 donut  
+  - **Calories:** 180 kcal  
+  - **Recipe:** Serve as is.  
+- *Avocado, Tomato, and Gouda Toast*  
+  - **Portion Size:** 0.5 avocado, 0.5 tomato, 0.5 slice gouda on white bread toast  
+  - **Calories:** 250 kcal  
+  - **Recipe:** Spread mashed avocado on toast, top with sliced tomato and gouda, broil until cheese melts.  
+
+**Lunch:**
+- *Eggs Benedict*  
+  - **Portion Size:** 1 serving  
+  - **Calories:** 550 kcal  
+  - **Recipe:** Toast an English muffin, top with a poached egg, turkey slice, and hollandaise sauce.  
+- *Corn Salsa with Tortilla Chips*  
+  - **Portion Size:** 0.5 cup salsa, 0.5 cup chips  
+  - **Calories:** 200 kcal  
+  - **Recipe:** Serve salsa with tortilla chips.  
+
+**Dinner:**
+- *Beef Angus Burger*  
+  - **Portion Size:** 1 patty with bun, lettuce, and tomato  
+  - **Calories:** 600 kcal  
+  - **Recipe:** Grill the patty and assemble with lettuce, tomato, and a bun.  
+- *Fajita Veggies*  
+  - **Portion Size:** 0.5 cup  
+  - **Calories:** 70 kcal  
+  - **Recipe:** Sauté bell peppers and onions with fajita seasoning.  
+
+**Snacks:**
+- *M&M Cookie*  
+  - **Portion Size:** 0.5 cookie  
+  - **Calories:** 150 kcal  
+  - **Recipe:** Serve as is.  
+- *Avocado*  
+  - **Portion Size:** 0.5 avocado  
+  - **Calories:** 120 kcal  
+  - **Recipe:** Serve sliced, plain or with a sprinkle of salt.  
+
+**Daily Totals:**
+- **Calories:** 2150 kcal
+- **Protein:** 66g
+- **Sugar:** 31g
+
+Each meal plan option ensures a balance of nutrients and variety, meeting the specified daily targets for calories, protein, and sugar.

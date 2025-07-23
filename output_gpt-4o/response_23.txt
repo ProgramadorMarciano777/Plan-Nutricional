@@ -1,0 +1,90 @@
+Creating a meal plan with the given items and nutritional targets requires a bit of creativity while ensuring the nutritional goals are met. Here are three meal plan options, each including breakfast, lunch, dinner, and snacks. Each meal plan will outline the calorie count and nutrient breakdown for each meal.
+
+### Meal Plan Option 1
+
+**Breakfast:**
+- **Pillsbury Cinnamon Roll (0.5 roll)**
+  - Calories: 150 kcal
+  - Recipe: Preheat oven to 375°F (190°C). Place the cinnamon roll on a baking sheet and bake for 10-12 minutes until golden brown. Let it cool slightly before serving.
+
+**Lunch:**
+- **Chef Boyardee Ravioli (1 can)**
+  - Calories: 220 kcal
+  - Recipe: Pour the ravioli into a saucepan. Heat over medium heat until warm, stirring occasionally. Serve hot.
+
+**Dinner:**
+- **Beef Angus Burger with Gouda Cheese (0.5 patty and 1 slice of cheese)**
+  - Calories: 350 kcal
+  - Recipe: Grill the beef patty for about 5 minutes on each side until fully cooked. Add a slice of gouda cheese on top and let it melt. Serve on a sourdough bread slice.
+
+**Snack:**
+- **Red Apple (1 apple)**
+  - Calories: 95 kcal
+  - Recipe: Simply wash the apple thoroughly and enjoy it as a fresh snack.
+
+**Total Calories:** 815 kcal  
+**Total Protein:** 29g  
+**Total Fat:** 30g  
+**Total Carbohydrates:** 95g  
+
+---
+
+### Meal Plan Option 2
+
+**Breakfast:**
+- **Sourdough Toast with Sour Cream (1 slice bread with 1 tbsp sour cream)**
+  - Calories: 180 kcal
+  - Recipe: Toast the sourdough bread until crispy. Spread a tablespoon of sour cream over the toast and serve.
+
+**Lunch:**
+- **Strawberry Acai Refresher (1 drink)**
+  - Calories: 90 kcal
+  - Recipe: Serve cold, poured over ice if desired.
+
+**Dinner:**
+- **Taco Bowl with Tortilla Chips (0.5 cup chips, 2 tbsp sour cream)**
+  - Calories: 400 kcal
+  - Recipe: Arrange tortilla chips in a bowl. Add a dollop of sour cream. Optionally, add any available veggies or cheese for a full taco experience.
+
+**Snack:**
+- **Blended Strawberry Margarita (1 drink)**
+  - Calories: 220 kcal
+  - Recipe: Blend ice with the margarita mix until smooth. Serve in a chilled glass with a slice of lime.
+
+**Total Calories:** 890 kcal  
+**Total Protein:** 15g  
+**Total Fat:** 25g  
+**Total Carbohydrates:** 110g  
+
+---
+
+### Meal Plan Option 3
+
+**Breakfast:**
+- **Red Apple Slices with Gouda Cheese (1 apple, 1 slice cheese)**
+  - Calories: 200 kcal
+  - Recipe: Slice the apple and serve with gouda cheese for a sweet and savory breakfast.
+
+**Lunch:**
+- **Warm Tortilla Chips with Sour Cream Dip (0.5 cup chips, 2 tbsp sour cream)**
+  - Calories: 300 kcal
+  - Recipe: Warm the tortilla chips in the oven for a few minutes. Serve with a side of sour cream for dipping.
+
+**Dinner:**
+- **Burger Patty with Strawberry Acai Refresher (0.5 patty, 1 drink)**
+  - Calories: 320 kcal
+  - Recipe: Grill the beef patty for about 5 minutes on each side until fully cooked. Pair with a cold strawberry acai refresher.
+
+**Snack:**
+- **Sourdough Bread with Gouda Cheese (1 slice bread, 1 slice cheese)**
+  - Calories: 200 kcal
+  - Recipe: Toast the sourdough bread and top with a slice of gouda cheese.
+
+**Total Calories:** 1020 kcal  
+**Total Protein:** 30g  
+**Total Fat:** 35g  
+**Total Carbohydrates:** 130g  
+
+---
+
+These meal plans offer a variety of familiar dishes using the available items and aim to meet the specified nutritional targets. Adjustments may be needed to perfectly align with the exact calorie, protein, and sugar targets.

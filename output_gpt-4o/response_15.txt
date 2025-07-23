@@ -1,0 +1,123 @@
+Based on the available items, I will create three meal plan options that aim to meet the specified nutritional targets. Each plan will include breakfast, lunch, dinner, and snacks, with specific recipes and portion sizes.
+
+### Meal Plan Option 1
+
+**Breakfast: Eggs Benedict**  
+- **Portion:** 1 serving  
+- **Recipe:** Poach two eggs. Toast an English muffin and top each half with a slice of Canadian bacon. Place a poached egg on each muffin half and drizzle with hollandaise sauce.  
+- **Calories:** 300 kcal  
+- **Protein:** 14g  
+- **Sugar:** 1g  
+
+**Lunch: Beef Angus Burger**  
+- **Portion:** 0.5 beef patty, whole wheat bun, lettuce, and tomato  
+- **Recipe:** Grill the 0.5 beef patty for about 5 minutes on each side. Assemble with lettuce, tomato, and a whole wheat bun.  
+- **Calories:** 350 kcal  
+- **Protein:** 20g  
+- **Sugar:** 5g  
+
+**Dinner: Kraft Mac and Cheese with Avocado**  
+- **Portion:** 1 serving Kraft Mac and Cheese with 1/2 avocado  
+- **Recipe:** Prepare Kraft Mac and Cheese according to package instructions. Top with diced avocado.  
+- **Calories:** 500 kcal  
+- **Protein:** 15g  
+- **Sugar:** 6g  
+
+**Snacks:**  
+- **Quaker S'mores Granola Bar**  
+  - **Portion:** 1 bar  
+  - **Calories:** 190 kcal  
+  - **Protein:** 2g  
+  - **Sugar:** 12g  
+- **Milano Double Chocolate Cookie**  
+  - **Portion:** 1 cookie  
+  - **Calories:** 110 kcal  
+  - **Protein:** 1g  
+  - **Sugar:** 10g  
+
+**Totals:**  
+- **Calories:** 1450 kcal  
+- **Protein:** 52g  
+- **Sugar:** 34g  
+
+### Meal Plan Option 2
+
+**Breakfast: Avocado Toast with Egg**  
+- **Portion:** 1 slice whole grain bread, 1/2 avocado, 1 poached egg  
+- **Recipe:** Toast the bread. Mash the avocado on top and season with salt and pepper. Place a poached egg on top.  
+- **Calories:** 350 kcal  
+- **Protein:** 10g  
+- **Sugar:** 2g  
+
+**Lunch: Tortilla Chips with Sour Cream and Salsa**  
+- **Portion:** 1 serving tortilla chips, 2 tbsp sour cream, salsa  
+- **Recipe:** Serve tortilla chips with sour cream and a side of salsa for dipping.  
+- **Calories:** 400 kcal  
+- **Protein:** 5g  
+- **Sugar:** 4g  
+
+**Dinner: White Rice with Beef Patty and Vegetables**  
+- **Portion:** 1 cup white rice, 0.5 beef patty, mixed vegetables  
+- **Recipe:** Cook white rice as per instructions. Grill the beef patty. Serve with steamed mixed vegetables.  
+- **Calories:** 600 kcal  
+- **Protein:** 25g  
+- **Sugar:** 3g  
+
+**Snacks:**  
+- **Double Chocolate Chip Cookie**  
+  - **Portion:** 1 cookie  
+  - **Calories:** 160 kcal  
+  - **Protein:** 2g  
+  - **Sugar:** 15g  
+- **Blended Strawberry Margarita**  
+  - **Portion:** 1 glass  
+  - **Calories:** 180 kcal  
+  - **Protein:** 0g  
+  - **Sugar:** 20g  
+
+**Totals:**  
+- **Calories:** 1690 kcal  
+- **Protein:** 42g  
+- **Sugar:** 44g  
+
+### Meal Plan Option 3
+
+**Breakfast: Smoothie Bowl**  
+- **Portion:** 1 cup mixed berries, 1/2 banana, 1/2 cup yogurt  
+- **Recipe:** Blend berries and banana with yogurt. Serve in a bowl topped with granola.  
+- **Calories:** 320 kcal  
+- **Protein:** 12g  
+- **Sugar:** 25g  
+
+**Lunch: Quaker S'mores Granola Bar with Banana**  
+- **Portion:** 1 granola bar, 1 banana  
+- **Recipe:** Enjoy the granola bar with a banana.  
+- **Calories:** 250 kcal  
+- **Protein:** 3g  
+- **Sugar:** 22g  
+
+**Dinner: White Rice and Avocado Salad**  
+- **Portion:** 1 cup rice, 1/2 avocado, cherry tomatoes, cucumber  
+- **Recipe:** Cook rice. Mix with diced avocado, halved cherry tomatoes, and sliced cucumber.  
+- **Calories:** 450 kcal  
+- **Protein:** 10g  
+- **Sugar:** 8g  
+
+**Snacks:**  
+- **Milano Double Chocolate Cookie**  
+  - **Portion:** 2 cookies  
+  - **Calories:** 220 kcal  
+  - **Protein:** 2g  
+  - **Sugar:** 20g  
+- **Kool-aid Tropical Punch**  
+  - **Portion:** 1 glass  
+  - **Calories:** 100 kcal  
+  - **Protein:** 0g  
+  - **Sugar:** 20g  
+
+**Totals:**  
+- **Calories:** 1340 kcal  
+- **Protein:** 27g  
+- **Sugar:** 95g  
+
+These meal plans provide a balanced approach to meeting the daily nutritional targets with the available items. Adjustments can be made to better meet the specific calorie, protein, and sugar goals.

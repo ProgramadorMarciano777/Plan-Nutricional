@@ -1,0 +1,13 @@
+Food_Doritoes = 1.0
+Food_French_Toast_Crunch_cereal = 0.5
+Food_Garden_Pizza = 2.0
+Food_avocado = 4.0
+Food_cheese = 2.0
+Food_everything_bagel = 1.0
+Food_mexican_rice = 1.0
+Food_nectarine = 0.5
+Food_vegan_ramen = 1.0
+--------------------------
+energy = 2231.0
+protein = 50.4
+sugar = 32.48

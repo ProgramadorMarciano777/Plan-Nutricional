@@ -1,0 +1,11 @@
+Food_Maple_CrÃ¨me_Bruele = 0.5
+Food_avocado = 1.0
+Food_brocoli_slaw = 2.0
+Food_m&m_cookie = 2.0
+Food_vegetable_cream_cheese = 3.0
+Food_white_bread_toast = 2.0
+Food_white_rice = 0.5
+--------------------------
+energy = 1083.5
+protein = 27.23
+sugar = 45.63

@@ -1,0 +1,15 @@
+Food_Berry_Cheerios = 1.0
+Food_Kool_aid_Tropical_Punch = 2.0
+Food_Krave_chocolate_cereal = 0.5
+Food_Lay's_Sour_Cream_and_Onion_Potato_Chips = 1.0
+Food_Milton's_Original_Multi_Grain_Crackers = 1.0
+Food_Quaker_Smores_Granola_Bar = 2.0
+Food_beef_angus_burger_patty = 1.0
+Food_clementine = 1.0
+Food_egg_ = 1.0
+Food_lettuce = 1.0
+Food_skim_milk = 2.0
+--------------------------
+energy = 1269.0
+protein = 58.43
+sugar = 69.72

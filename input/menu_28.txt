@@ -1,0 +1,16 @@
+Food_Garden_Pizza = 2.0
+Food_Kraft_Mac_and_Chees_Microwavable_cup = 1.5
+Food_Maple_CrÃ¨me_Bruele = 0.5
+Food_Milton's_Original_Multi_Grain_Crackers = 2.0
+Food_Scooby_Doo_gummies = 0.5
+Food_avocado = 1.5
+Food_beef_angus_burger_patty = 0.5
+Food_cranberry_juice = 1.0
+Food_eggs_benedict = 0.5
+Food_onion = 2.0
+Food_skim_milk = 1.0
+Food_sopaipillas = 3.0
+--------------------------
+energy = 1989.25
+protein = 58.55
+sugar = 44.34

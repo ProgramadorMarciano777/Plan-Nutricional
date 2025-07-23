@@ -1,0 +1,16 @@
+Food_Chef_Boyardee_Ravioli = 1.0
+Food_Starbuck_strawberry_acai_refresher = 1.0
+Food_baked_cheddar_ruffles = 2.0
+Food_beef_angus_burger_patty = 2.0
+Food_chicken_taco = 1.5
+Food_chocolate_chip_Cliff_Bar = 1.0
+Food_clementine = 2.0
+Food_double_chocolate_chip_cookie = 3.0
+Food_guacamole_bowl = 2.0
+Food_mini_donut_powdered_sugar = 3.0
+Food_pringles = 5.0
+Food_sour_cream = 2.0
+--------------------------
+energy = 3067.5
+protein = 117.13
+sugar = 118.5
