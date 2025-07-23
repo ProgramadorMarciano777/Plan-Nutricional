@@ -2,7 +2,6 @@ import openai
 import os
 
 # Mete aquí tu clave directamente
-# openai.api_key = "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"
 openai.api_key = os.getenv("OPENAI_KEY_API")
 
 def generate_meal_plan(user_data: dict, menu_input: str) -> str:
