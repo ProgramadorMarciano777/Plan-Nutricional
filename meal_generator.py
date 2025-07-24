@@ -1,8 +1,7 @@
 import openai
-import os
 
 # Mete aquí tu clave directamente
-openai.api_key = os.getenv("OPENAI_KEY_API")
+openai.api_key = "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"
 
 def generate_meal_plan(user_data: dict, menu_input: str) -> str:
     TEMPLATE_PROMPT = f"""
@@ -17,25 +16,23 @@ Objetivos del usuario:
 
 Con los alimentos disponibles indicados a continuación, genera un plan de comidas que incluya:
 
-👉 **3 opciones diferentes para cada uno de los siguientes momentos del día**:
+👉 3 opciones diferentes para cada uno de los siguientes momentos del día:
 - Desayuno
 - Comida
 - Cena
 - Merienda o snack
 
 Cada opción debe incluir:
-- Nombre del plato
-- Cantidad o ración exacta (por ejemplo: “1 filete de pollo de 150g”)
+- Nombre del plato (en negrita si es posible)
+- Cantidad o ración exacta
 - Valor calórico aproximado
 - Breve receta o modo de preparación (si aplica)
-- Una breve descripción visual del plato para generar una imagen, escrita como si fuera una escena de fotografía de comida. Ejemplo: "Vista cenital de una ensalada con aguacate y salmón en un plato blanco sobre una mesa de madera clara"
+- Una **descripción visual** del plato para generación de imagen (ej. “Vista cenital de una ensalada con aguacate y salmón en un bol blanco sobre fondo de madera clara”)
 
-Después de cada bloque (desayunos, comidas, etc.), indica el total aproximado de calorías, proteínas y azúcares del conjunto.
-
-Available items:
+Al final de cada bloque indica el total aproximado de calorías, proteínas y azúcares.
+Alimentos disponibles:
 {menu_input}
 """
-
     try:
         client = openai.OpenAI(api_key=openai.api_key)
         response = client.chat.completions.create(

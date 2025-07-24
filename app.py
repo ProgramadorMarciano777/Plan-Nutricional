@@ -1,5 +1,7 @@
 import streamlit as st
 from meal_generator import generate_meal_plan
+from image_generator import generate_image_from_prompt
+import re
 
 st.title("🥗 NutriGen - Generador Nutricional Interactivo")
 
@@ -23,7 +25,23 @@ if submitted:
         "protein": protein,
         "sugar": sugar
     }
+
     st.markdown("### 🧠 Resultado:")
     with st.spinner("Generando el plan..."):
+
         plan = generate_meal_plan(user_data, menu_input)
-        st.text_area("Plan generado:", plan, height=500)
+        st.session_state["raw_plan"] = plan
+
+        st.markdown("---")
+        blocks = re.split(r"\n-{3,}\n", plan) if "---" in plan else [plan]
+
+        for block in blocks:
+            st.markdown(block)
+            # Buscar descripciones visuales dentro del bloque
+            matches = re.findall(r"(?i)descripción visual: (.+)", block)
+            for desc in matches:
+                image_url = generate_image_from_prompt(desc.strip())
+                if image_url:
+                    st.image(image_url, caption=desc.strip(), use_column_width="always")
+                else:
+                    st.warning("❌ Error al generar la imagen.")
