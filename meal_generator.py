@@ -24,7 +24,7 @@ Con los alimentos disponibles indicados a continuación, genera un plan de comid
 - Merienda o snack
 
 Cada opción debe incluir:
-- Nombre del plato (en negrita si es posible)
+- Nombre del plato (en mayúsculas)
 - Cantidad o ración exacta
 - Valor calórico aproximado
 - Breve receta o modo de preparación (si aplica)
