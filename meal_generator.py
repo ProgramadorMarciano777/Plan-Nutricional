@@ -43,7 +43,7 @@ Alimentos disponibles:
                 {"role": "user", "content": TEMPLATE_PROMPT}
             ],
             temperature=0.7,
-            max_tokens=1500
+            max_tokens=2000
         )
         return response.choices[0].message.content.strip()
     except Exception as e:
