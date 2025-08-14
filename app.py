@@ -3,7 +3,6 @@ from meal_generator import generate_meal_plan
 import re
 from docx import Document
 from io import BytesIO
-import re
 
 # -------- Helpers --------
 def _to_float(x):
@@ -115,38 +114,112 @@ def split_plan_sections(plan_text: str) -> dict:
     return sections
 
 # -------- Función para rellenar el fichero --------
+
 def fill_docx_template(template_file, mapping: dict) -> BytesIO:
     """
-    Rellena un .docx sustituyendo cada {{CLAVE}} por su valor en mapping.
-    OJO: reasigna el texto de párrafos/celdas (puede perder estilos por-run muy finos).
+    Reemplaza {{CLAVE}} por su valor preservando el estilo del placeholder.
+    Funciona en párrafos y en celdas de tablas. Soporta saltos de línea \n.
     """
     doc = Document(template_file)
 
-    def replace_in_paragraphs(paragraphs):
-        for p in paragraphs:
-            text = p.text
-            for k, v in mapping.items():
-                text = text.replace(k, v)
-            p.text = text
+    def copy_format(src_run, dst_run):
+        # Copiamos atributos básicos del run origen al destino
+        dst_run.bold = src_run.bold
+        dst_run.italic = src_run.italic
+        dst_run.underline = src_run.underline
+        if src_run.font is not None:
+            dst_run.font.name  = src_run.font.name
+            dst_run.font.size  = src_run.font.size
+            dst_run.font.color.rgb = getattr(src_run.font.color, "rgb", None)
 
-    def replace_in_tables(tables):
-        for table in tables:
-            for row in table.rows:
-                for cell in row.cells:
-                    # reemplaza en el texto de la celda
-                    text = cell.text
-                    for k, v in mapping.items():
-                        text = text.replace(k, v)
-                    # reasigna todo el texto de la celda
-                    for p in cell.paragraphs:
-                        p.text = ""  # limpia
-                    cell.paragraphs[0].text = text
-                    # también procesa tablas anidadas
-                    if cell.tables:
-                        replace_in_tables(cell.tables)
+    def add_text_with_breaks(run, text):
+        parts = str(text).split("\n")
+        run.text = parts[0]
+        for part in parts[1:]:
+            run.add_break()     # salto de línea dentro del párrafo
+            run.add_text(part)
 
-    replace_in_paragraphs(doc.paragraphs)
-    replace_in_tables(doc.tables)
+    def replace_in_paragraph(p):
+        if not p.runs:
+            return
+
+        # Construimos el texto completo y un mapa de qué run aporta cada carácter
+        full = "".join(r.text for r in p.runs)
+        if not full:
+            return
+        run_map = []
+        for idx, r in enumerate(p.runs):
+            run_map += [idx] * len(r.text)
+
+        # Construimos una lista de segmentos (texto_normal, estilo) o (reemplazo, estilo_del_run)
+        segments = []
+        i = 0
+        while i < len(full):
+            # ¿algún placeholder empieza aquí?
+            hit_key = None
+            for k in mapping.keys():
+                if full.startswith(k, i):
+                    # elige el más largo si hay solapamientos
+                    if hit_key is None or len(k) > len(hit_key):
+                        hit_key = k
+            if hit_key:
+                start_run_idx = run_map[i] if i < len(run_map) else 0
+                segments.append(("__REPL__", mapping[hit_key], start_run_idx))
+                i += len(hit_key)
+                continue
+            # texto normal: agrupa hasta el siguiente placeholder o cambio de run para reducir runs
+            start_i = i
+            start_run_idx = run_map[i] if i < len(run_map) else 0
+            while i < len(full):
+                next_is_key = any(full.startswith(k, i) for k in mapping.keys())
+                if next_is_key:
+                    break
+                # si cambia el run, cerramos segmento para preservar estilos
+                curr_run_idx = run_map[i] if i < len(run_map) else start_run_idx
+                if curr_run_idx != start_run_idx:
+                    break
+                i += 1
+            segments.append(("__TEXT__", full[start_i:i], start_run_idx))
+
+        # Limpiamos los runs existentes (sin borrar el párrafo)
+        for r in p.runs:
+            r.text = ""
+
+        # Escribimos nuevos runs preservando formato del run de origen
+        # Usamos el primer run como base y añadimos nuevos a partir de ahí
+        if not p.runs:
+            base_run = p.add_run()
+        else:
+            base_run = p.runs[0]
+
+        first = True
+        for kind, content, src_idx in segments:
+            # el run de origen para copiar formato
+            src_run = p.runs[src_idx] if src_idx < len(p.runs) else base_run
+            if first:
+                tgt_run = base_run
+                first = False
+            else:
+                tgt_run = p.add_run()
+            copy_format(src_run, tgt_run)
+            if kind == "__REPL__":
+                add_text_with_breaks(tgt_run, content)
+            else:
+                add_text_with_breaks(tgt_run, content)
+
+    def replace_in_table(table):
+        for row in table.rows:
+            for cell in row.cells:
+                for cp in cell.paragraphs:
+                    replace_in_paragraph(cp)
+                for subt in cell.tables:
+                    replace_in_table(subt)
+
+    # Ejecuta reemplazo en todo el documento
+    for p in doc.paragraphs:
+        replace_in_paragraph(p)
+    for t in doc.tables:
+        replace_in_table(t)
 
     out = BytesIO()
     doc.save(out)
@@ -171,36 +244,54 @@ if uploaded is not None:
 
 # 3) Form con valores por defecto desde el .docx (si existen)
 with st.form("nutri_form"):
-    st.subheader("Introduce / revisa los datos")
+    st.header("Introduce / revisa los datos")
 
+    st.subheader("Datos personales")
     nombre = st.text_input("Nombre completo", value=parsed.get("nombre", "") or "")
     edad = st.number_input("Edad", 0, 120, int(parsed.get("edad") or 30))
     sexo = st.selectbox("Sexo", ["Hombre", "Mujer", "Otro"], 
                         index={"hombre":0,"mujer":1}.get(str(parsed.get("sexo") or "").lower(), 2))
 
-    weight_default = float(parsed.get("peso") or 70.0)
-    height_default = float(parsed.get("estatura") or 170.0)
+    weight_default = float(parsed.get("peso") or 0.0)
+    height_default = float(parsed.get("estatura") or 0.0)
 
-    weight = st.number_input("Peso (kg)", 30.0, 300.0, weight_default)
-    height = st.number_input("Estatura (cm)", 120.0, 230.0, height_default)
+    weight = st.number_input("Peso (kg)", 0.0, 0.0, weight_default)
+    height = st.number_input("Estatura (cm)", 0.0, 0.0, height_default)
 
     imc_val = parsed.get("imc")
     st.markdown(f"**IMC (auto):** {imc_val if imc_val is not None else '—'}")
 
-    grasa = st.number_input("% Grasa corporal", 0.0, 70.0, float(parsed.get("grasa") or 0.0))
-    masa = st.number_input("% Masa muscular", 0.0, 80.0, float(parsed.get("masa_muscular") or 0.0))
+    grasa = st.number_input("% Grasa corporal", 0.0, 0.0, float(parsed.get("grasa") or 0.0))
+    masa = st.number_input("% Masa muscular", 0.0, 0.0, float(parsed.get("masa_muscular") or 0.0))
 
     objetivo = st.text_input("Objetivo nutricional principal", value=parsed.get("objetivo", "") or "")
+    
+    st.markdown("---")
+    st.subheader("Diagnótico Nutricional")
+    desc_act_nutricional_state = st.text_area("Descripción del estado nutricional actual")
+    relevant_analy_res = st.text_area("Resultados de análisis relevantes (si aplica)")
+    clin_hab_observs = st.text_area("Observaciones clínicas y de hábitos")
 
     st.markdown("---")
-    st.subheader("Parámetros del plan")
+    st.subheader("Objetivos del plan nutricional")
+    objetivo = st.text_input("Objetivo principal", value=parsed.get("objetivo", "") or "")
+    objetivo_sec = st.text_input("Objetivo secundario")
+    estim_d = st.text_input("Plazo estimado")
+
+    st.markdown("---")
+    st.subheader("Estrategia Nutricional")
     preferences = st.text_input("Preferencias alimentarias (ej. mediterránea, vegana...)")
     restrictions = st.text_input("Restricciones (ej. sin gluten, sin lactosa...)")
+    menu_input = st.text_area("Lista de alimentos disponibles (ej. Arroz = 100, Pollo = 200...)")
+    plan_just = st.text_area("Justificación de la elección del plan")
+
+    st.markdown("---")
+    st.subheader("Reparto de Macronutrientes (Diario Aproximado)")
     calories = st.number_input("Calorías diarias objetivo", 1000, 5000, 2000)
     protein = st.number_input("Proteína diaria objetivo (g)", 20, 300, 120)
+    fat = st.number_input("Grasa diaria objetivo (g)", 0, 200, 30)
     sugar = st.number_input("Azúcar diaria objetivo (g)", 0, 200, 30)
-    menu_input = st.text_area("Lista de alimentos disponibles (ej. Arroz = 100, Pollo = 200...)")
-
+    carbohydrates = st.number_input("Carbohidratos diarios objetivo (g)", 0, 200, 30)
     submitted = st.form_submit_button("Generar Plan")
 
 # 4) Generar plan
