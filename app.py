@@ -3,6 +3,175 @@ from meal_generator import generate_meal_plan
 import re
 from docx import Document
 from io import BytesIO
+import base64
+
+def set_bg_from_local(img_path: str):
+    with open(img_path, "rb") as f:
+        b64 = base64.b64encode(f.read()).decode()
+    st.markdown(f"""
+    <style>
+    .stApp {{
+      background: url("data:image/png;base64,{b64}") no-repeat center center fixed;
+      background-size: cover;
+    }}
+    [data-testid="stHeader"] {{background: rgba(0,0,0,0);}}
+    
+    </style>
+    """, unsafe_allow_html=True)
+
+set_bg_from_local("fondo.png")  # pon aquí tu ruta
+
+st.markdown("""
+<style>
+/* =========================
+   PALETA (ajústala aquí)
+   ========================= */
+:root{
+  --card:           #64D6ED;      /* fondo del bloque central */
+  --card-weak:      #F0B34B;      /* paneles internos/headers */
+  --card-strong:    #D4870A;      /* bordes/sombras sutiles */
+  --surface:        #FFFFFF;      /* superficies de inputs */
+  --surface-weak:   rgba(255,255,255,.85);
+  --opciSupCol:     #457AFF;      /* fondo de las opciones superiores */
+  --ink:            #1F2937;      /* texto principal */
+  --ink-soft:       rgba(31,41,55,.85);
+  --h1Color:        #FFB545;      /* título principal */
+  --accent:         #1f7a8c;      /* títulos/enlaces/acciones */
+  --accent-weak:    rgba(31,122,140,.12);
+}
+
+/* =========================
+   FONDO GLOBAL + BLOQUE
+   ========================= */
+/* tu imagen de fondo ya la pones con set_bg_from_local() */
+.stApp { color: var(--ink); }
+
+/* ① BLOQUE CENTRAL (títulos, uploaders, formularios…)  */
+.stMainBlockContainer{
+  background: var(--card);
+  padding: 2rem 2.4rem;
+  border-radius: 20px;
+  border: 1px solid color-mix(in srgb, var(--card-strong), #000 10%);
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+}
+
+/* =========================
+   CABECERAS / TÍTULOS
+   ========================= */
+/* <div class="stHeading">…  h1 / h3  … */
+.stHeading h1, .stHeading h2, .stHeading h3{
+  color: var(--ink);
+  letter-spacing:.2px;
+}
+#nutri-gen-generador-nutricional-interactivo{   /* tu H1 del título */
+  background: var(--h1Color);
+}
+
+/* =========================
+   FILE UPLOADERS
+   ========================= */
+/* contenedor del uploader (caja completa) */
+[data-testid="stFileUploader"]{
+  background: color-mix(in srgb, var(--card), #fff 10%);
+  border-radius: 14px;
+  border: 1px dashed color-mix(in srgb, var(--card-strong), #000 20%);
+  padding:.35rem .35rem 0 .35rem;
+}
+/* zona de drop */
+[data-testid="stFileUploaderDropzone"]{
+  background: var(--surface-weak);
+  border: 1px dashed rgba(0,0,0,.18);
+  border-radius: 12px;
+}
+/* botón “Browse files” */
+button[kind="secondary"]{
+  background: var(--accent);
+  color:#fff;
+  border:0;
+}
+button[kind="secondary"]:hover{ filter:brightness(.95); }
+
+/* zona de las opciones superiores */
+[data-testid="stStatusWidget"]{
+  background: var(--opciSupCol);
+  border: 1px dashed rgba(0,0,0,.18);
+  border-radius: 12px;
+}
+
+/* =========================
+   FORM / CAMPOS
+   ========================= */
+/* evita que el form pinte su propia tarjeta blanca */
+[data-testid="stForm"] > div{
+  background: transparent !important;
+  box-shadow:none !important;
+  border:none !important;
+}
+
+/* inputs y selects */
+[data-baseweb="input"] input,
+textarea,
+[data-baseweb="select"] > div{
+  background: var(--surface);
+  color: var(--ink);
+}
+
+/* sub-secciones con encabezado (las cajas que envuelven cada grupo) */
+.stElementContainer .stHeading + div{
+  background: color-mix(in srgb, var(--card), #fff 6%);
+  border-radius: 12px;
+}
+
+/* =========================
+   HEADERS DE SECCIÓN (H3)
+   ========================= */
+/* Ej: #diagnostico-nutricional, #objetivos-del-plan-nutricional,
+      #estrategia-nutricional, #reparto-de-macronutrientes-diario-aproximado */
+h3#datos-personales,
+h3#diagnostico-nutricional,
+h3#objetivos-del-plan-nutricional,
+h3#estrategia-nutricional,
+h3#reparto-de-macronutrientes-diario-aproximado,
+h3#recomendaciones-generales,
+h3#indicaciones-y-sugerencias-personalizadas,
+h3#seguimiento-y-reevaluacion{
+  padding:.6rem .75rem;
+  margin:.75rem 0 .5rem 0;
+  background: var(--card-weak);
+  border-radius:10px;
+  color: var(--ink);
+}
+
+/* =========================
+   ALERT/INFO (el recuadro gris al final)
+   ========================= */
+[data-testid="stAlertContainer"]{
+  background: var(--accent-weak) !important;
+  border: 1px solid color-mix(in srgb, var(--accent), #000 15%);
+  color: var(--ink-soft);
+  border-radius: 12px;
+}
+
+/* =========================
+   BOTÓN “Generar Plan”
+   ========================= */
+.stButton button{
+  background: var(--accent);
+  color:#fff;
+  border:0;
+  border-radius:10px;
+  padding:.5rem 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,.15);
+}
+.stButton button:hover{ filter:brightness(.95); }
+
+/* =========================
+   DETALLES
+   ========================= */
+hr{ border-color: color-mix(in srgb, var(--card-strong), #000 10%); }
+a{ color: var(--accent); }
+</style>
+""", unsafe_allow_html=True)
 
 # =====================
 # Helpers numéricos
@@ -245,7 +414,7 @@ def fill_docx_template(template_file, mapping: dict) -> BytesIO:
 # =====================
 # UI
 # =====================
-st.title("🥗 NutriGen - Generador Nutricional Interactivo")
+st.title("🥗 NutriGen - Generador Nutricional Interactivo 🥗")
 
 uploaded = st.file_uploader("Sube la FICHA del cliente (Plan A .docx)", type=["docx"])
 template_file = st.file_uploader("Sube la PLANTILLA a rellenar (.docx)", type=["docx"])
