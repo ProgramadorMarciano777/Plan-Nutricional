@@ -4,6 +4,7 @@ import re
 from docx import Document
 from io import BytesIO
 import base64
+from datetime import date
 
 def set_bg_from_local(img_path: str):
     with open(img_path, "rb") as f:
@@ -411,6 +412,179 @@ def fill_docx_template(template_file, mapping: dict) -> BytesIO:
     out.seek(0)
     return out
 
+def build_basic_docx(
+    nombre:str,
+    user_data:dict,
+    secs:dict,
+    desc_act_nutricional_state:str,
+    relevant_analy_res:str,
+    clin_hab_observs:str,
+    objetivos_secundarios:str,
+    plazo_estimado:str,
+    al_rec:str,
+    just_plan:str,
+    restrictions:str,
+    hidra,
+    fr_act_fis:str,
+    cal_horas_sueno:str,
+    supl_rec:str,
+    cons_esp:str,
+    prim_rev_sug:str,
+    param_ev_seg:str,
+    frec_rec_rev:str,
+    reparto_macros_text:str
+) -> BytesIO:
+    """Crea un DOCX autónomo (sin plantilla) con todo el contenido del plan."""
+    d = Document()
+    d.add_heading(f"Plan nutricional personalizado para {nombre or 'Cliente'}", 0)
+    d.add_paragraph(f"Fecha: {date.today().strftime('%d/%m/%Y')}")
+
+    d.add_heading("1. Datos del Cliente", level=1)
+    p = d.add_paragraph()
+    p.add_run("Nombre completo: ").bold = True; d.add_paragraph(str(user_data.get("nombre") or "—"))
+    p = d.add_paragraph(); p.add_run("Edad: ").bold = True; d.add_paragraph(str(user_data.get("edad") or "—"))
+    p = d.add_paragraph(); p.add_run("Sexo: ").bold = True; d.add_paragraph(str(user_data.get("sexo") or "—"))
+    p = d.add_paragraph(); p.add_run("Peso (kg): ").bold = True; d.add_paragraph(str(user_data.get("peso") or "—"))
+    p = d.add_paragraph(); p.add_run("Estatura (cm): ").bold = True; d.add_paragraph(str(user_data.get("estatura") or "—"))
+    p = d.add_paragraph(); p.add_run("IMC: ").bold = True; d.add_paragraph(str(user_data.get("imc") or "—"))
+    p = d.add_paragraph(); p.add_run("% Grasa corporal: ").bold = True; d.add_paragraph(str(user_data.get("grasa") or "—"))
+    p = d.add_paragraph(); p.add_run("% Masa muscular: ").bold = True; d.add_paragraph(str(user_data.get("masa_muscular") or "—"))
+    p = d.add_paragraph(); p.add_run("Objetivo nutricional principal: ").bold = True; d.add_paragraph(str(user_data.get("objetivo") or "—"))
+
+    d.add_heading("2. Diagnóstico Nutricional", level=1)
+    d.add_paragraph("Descripción del estado nutricional actual:", style=None).runs[0].bold = True
+    d.add_paragraph(desc_act_nutricional_state or "—")
+    d.add_paragraph("Resultados de análisis relevantes (si aplica):").runs[0].bold = True
+    d.add_paragraph(relevant_analy_res or "—")
+    d.add_paragraph("Observaciones clínicas y de hábitos:").runs[0].bold = True
+    d.add_paragraph(clin_hab_observs or "—")
+
+    d.add_heading("3. Objetivos del Plan Nutricional", level=1)
+    d.add_paragraph(f"Objetivo principal: {user_data.get('objetivo') or '—'}")
+    d.add_paragraph(f"Objetivos secundarios: {objetivos_secundarios or '—'}")
+    d.add_paragraph(f"Plazo estimado: {plazo_estimado or '—'}")
+
+    d.add_heading("4. Estrategia Nutricional", level=1)
+    d.add_paragraph(f"Tipo de alimentación recomendada: {al_rec or '—'}")
+    d.add_paragraph("Justificación de la elección del plan:").runs[0].bold = True
+    d.add_paragraph(just_plan or "—")
+    d.add_paragraph(f"Restricciones o preferencias alimentarias consideradas: {restrictions or '—'}")
+
+    d.add_heading("5. Reparto de Macronutrientes (Diario Aproximado)", level=1)
+    for line in (reparto_macros_text or "").splitlines():
+        d.add_paragraph(line)
+
+    d.add_heading("6. Distribución de Comidas (Ejemplo Diario)", level=1)
+    d.add_paragraph("DESAYUNOS").runs[0].bold = True
+    d.add_paragraph(secs.get("DESAYUNO") or "—")
+    d.add_paragraph("COMIDAS").runs[0].bold = True
+    d.add_paragraph(secs.get("COMIDA") or "—")
+    d.add_paragraph("CENAS").runs[0].bold = True
+    d.add_paragraph(secs.get("CENA") or "—")
+    d.add_paragraph("MERIENDAS / SNACKS").runs[0].bold = True
+    d.add_paragraph(secs.get("MERIENDA") or "—")
+
+    d.add_heading("7. Recomendaciones Generales", level=1)
+    d.add_paragraph(f"Hidratación: mínimo {hidra} litros/día")
+    d.add_paragraph(f"Frecuencia de actividad física sugerida: {fr_act_fis or '—'}")
+    d.add_paragraph(f"Calidad y horas de sueño recomendadas: {cal_horas_sueno or '—'}")
+    d.add_paragraph(f"Suplementación recomendada (si aplica): {supl_rec or '—'}")
+
+    d.add_heading("8. Indicaciones y Sugerencias Personalizadas", level=1)
+    d.add_paragraph(cons_esp or "—")
+
+    d.add_heading("9. Seguimiento y Reevaluación", level=1)
+    d.add_paragraph(f"Primera revisión sugerida en: {prim_rev_sug or '—'}")
+    d.add_paragraph(f"Parámetros a evaluar en seguimiento: {param_ev_seg or '—'}")
+    d.add_paragraph(f"Frecuencia recomendada de revisiones: {frec_rec_rev or '—'}")
+
+    # Guardar a memoria
+    buf = BytesIO()
+    d.save(buf)
+    buf.seek(0)
+    return buf
+
+
+def build_basic_pdf(
+    nombre:str,
+    user_data:dict,
+    secs:dict,
+    texto_bloques:list
+) -> BytesIO:
+    """
+    Crea un PDF sencillo (A4) usando reportlab.
+    texto_bloques: lista de (titulo, [lineas]) para maquetar bloques.
+    """
+    try:
+        from reportlab.lib.pagesizes import A4
+        from reportlab.pdfgen import canvas
+        from reportlab.lib.units import cm
+        from reportlab.lib.utils import simpleSplit
+    except Exception:
+        return None  # reportlab no está disponible
+
+    W, H = A4
+    margin = 2 * cm
+    y = H - margin
+
+    buf = BytesIO()
+    c = canvas.Canvas(buf, pagesize=A4)
+    c.setTitle(f"Plan nutricional - {nombre or 'Cliente'}")
+
+    def draw_title(txt, size=16):
+        nonlocal y
+        if y < 3*cm:
+            c.showPage(); y = H - margin
+        c.setFont("Helvetica-Bold", size)
+        c.drawString(margin, y, txt)
+        y -= 0.8*cm
+
+    def draw_par(lines, size=11, leading=14):
+        nonlocal y
+        c.setFont("Helvetica", size)
+        for line in lines:
+            parts = simpleSplit(str(line), "Helvetica", size, W - 2*margin)
+            for p in parts:
+                if y < 2.5*cm:
+                    c.showPage(); y = H - margin; c.setFont("Helvetica", size)
+                c.drawString(margin, y, p)
+                y -= leading
+
+    # Cabecera
+    draw_title(f"Plan nutricional personalizado para {nombre or 'Cliente'}", 18)
+    draw_par([f"Fecha: {date.today().strftime('%d/%m/%Y')}"])
+
+    # Datos cortos en una lista
+    draw_title("1. Datos del Cliente", 14)
+    datos_lines = [
+        f"Edad: {user_data.get('edad','—')}",
+        f"Sexo: {user_data.get('sexo','—')}",
+        f"Peso (kg): {user_data.get('peso','—')}",
+        f"Estatura (cm): {user_data.get('estatura','—')}",
+        f"IMC: {user_data.get('imc','—')}",
+        f"% Grasa: {user_data.get('grasa','—')}",
+        f"% Masa muscular: {user_data.get('masa_muscular','—')}",
+        f"Objetivo: {user_data.get('objetivo','—')}",
+    ]
+    draw_par(datos_lines)
+
+    # Bloques con títulos
+    for titulo, lineas in texto_bloques:
+        draw_title(titulo, 14)
+        draw_par(lineas)
+
+    # Comidas
+    draw_title("6. Distribución de Comidas (Ejemplo Diario)", 14)
+    for k in ("DESAYUNO", "COMIDA", "CENA", "MERIENDA"):
+        draw_par([k + ":"], size=12)
+        draw_par([(secs.get(k) or "—")])
+
+    c.showPage()
+    c.save()
+    buf.seek(0)
+    return buf
+
+
 # =====================
 # UI
 # =====================
@@ -539,12 +713,15 @@ saved_plan = st.session_state.get("plan")
 # =====================
 # Rellenar PLANTILLA y descargar
 # =====================
-if template_file is not None and has_plan and saved_user_data and saved_plan:
+# =====================
+# Descargas (plantilla si hay + básico Word/PDF siempre que exista plan)
+# =====================
+if has_plan and saved_user_data and saved_plan:
     user_data = saved_user_data
     plan = saved_plan
     secs = st.session_state.get("plan_sections", {})
 
-    # Cálculo simple de % macros (puedes afinarlo)
+    # % macros (como ya hacías)
     try:
         pct_prot = round((user_data["protein"] * 4) / user_data["calories"] * 100)
     except Exception:
@@ -559,74 +736,140 @@ if template_file is not None and has_plan and saved_user_data and saved_plan:
         f"Carbohidratos: ~{pct_carb}%"
     )
 
-    mapping = {
-        # Encabezado/cliente
-        "{{NOMBRE_COMPLETO}}": str(nombre or "—"),
-        "{{EDAD}}": str(edad or "—"),
-        "{{SEXO}}": str(sexo or "—"),
-        "{{PESO_KG}}": f"{float(user_data.get('peso') or 0):.1f}" if user_data.get("peso") else "—",
-        "{{ESTATURA_CM}}": f"{float(user_data.get('estatura') or 0):.1f}" if user_data.get("estatura") else "—",
-        "{{IMC}}": f"{float(user_data.get('imc')):.1f}" if user_data.get("imc") is not None else "—",
-        "{{GRASA_PCT}}": f"{float(user_data.get('grasa') or 0):.1f}" if user_data.get("grasa") is not None else "—",
-        "{{MASA_MUSCULAR_PCT}}": f"{float(user_data.get('masa_muscular') or 0):.1f}" if user_data.get("masa_muscular") is not None else "—",
-        "{{OBJETIVO_PRINCIPAL}}": str(objetivo_principal or "—"),
-
-        # Diagnóstico
-        "{{DESC_EST_NUT_ACT}}": str(desc_act_nutricional_state or "—"),
-        "{{RES_AN_R}}": str(relevant_analy_res or "—"),
-        "{{OBS_CLI_HAB}}": str(clin_hab_observs or "—"),
-
-        # Objetivos
-        "{{OBJS_SECS}}": str(objetivos_secundarios or "—"),
-        "{{PLA_EST}}": str(plazo_estimado or "—"),
-
-        # Estrategia
-        "{{AL_REC}}": str(al_rec or "—"),
-        "{{JUST_PL}}": str(just_plan or "—"),
-        "{{REST_PREF_AL}}": str(restrictions or "—"),
-
-        # Macronutrientes (valores diarios objetivo)
-        "{{CALORIAS_OBJ}}": str(calories),
-        "{{PROTEINA_OBJ}}": str(protein),
-        "{{AZUCAR_OBJ}}": str(sugar),
-        "{{CARB_OBJ}}": str(carbohydrates),
-
-        # OJO: en tu plantilla el placeholder de grasa tiene un espacio: "{{GR _OBJ}}"
-        "{{GR _OBJ}}": str(fat),  # respeta el placeholder exacto
-
-        # Distribución de comidas (secciones)
-        "{{DESAYUNO}}": secs.get("DESAYUNO", "") or "—",
-        "{{COMIDA}}": secs.get("COMIDA", "") or "—",
-        "{{CENA}}": secs.get("CENA", "") or "—",
-        "{{MERIENDA}}": secs.get("MERIENDA", "") or "—",
-
-        # Recomendaciones
-        "{{HIDRA}}": str(hidra),
-        "{{FR_ACT_FIS}}": str(fr_act_fis or "—"),
-        "{{CAL_HORS_SUEÑ_REC}}": str(cal_horas_sueno or "—"),
-        "{{SUPL_REC}}": str(supl_rec or "—"),
-
-        # Indicaciones y seguimiento
-        "{{CONS_ESP_EST_CLI}}": str(cons_esp or "—"),
-        "{{PRIM_REV_SUG}}": str(prim_rev_sug or "—"),
-        "{{PARAM_EV_SEG}}": str(param_ev_seg or "—"),
-        "{{FREC_REC_REV}}": str(frec_rec_rev or "—"),
-
-        # Bloques de texto finales
-        "{{REPARTO_MACROS}}": reparto_macros_text,
-        "{{RECOMENDACIONES}}": "- Hidratación: mantener 1.5–2 L/día.\n- Verduras en 2+ comidas.\n- Ajustar raciones a saciedad.",
-        "{{INDICACIONES}}": "Priorizar alimentos frescos y proteína magra. Reducir ultraprocesados.",
-        "{{SEGUIMIENTO}}": "Revisión en 4–6 semanas.",
-        "{{OBSERVACIONES}}": parsed.get("observaciones_finales","—"),
-    }
-
-    filled = fill_docx_template(template_file, mapping)
-    nombre_archivo = f"Plan_{(nombre or 'cliente').replace(' ', '_')}.docx"
+    # ---------- BOTONES “BÁSICO” (siempre disponibles) ----------
+    # Construimos el DOCX básico
+    basic_docx = build_basic_docx(
+        nombre,
+        user_data,
+        secs,
+        desc_act_nutricional_state,
+        relevant_analy_res,
+        clin_hab_observs,
+        objetivos_secundarios,
+        plazo_estimado,
+        al_rec,
+        just_plan,
+        restrictions,
+        hidra,
+        fr_act_fis,
+        cal_horas_sueno,
+        supl_rec,
+        cons_esp,
+        prim_rev_sug,
+        param_ev_seg,
+        frec_rec_rev,
+        reparto_macros_text
+    )
     st.download_button(
-        label="⬇️ Descargar plan rellenado (.docx)",
-        data=filled,
-        file_name=nombre_archivo,
+        "⬇️ Descargar Word (básico)",
+        data=basic_docx,
+        file_name=f"Plan_{(nombre or 'cliente').replace(' ', '_')}.docx",
         mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     )
+
+    # Construimos el PDF básico (si reportlab está disponible)
+    pdf_blocks = [
+        ("2. Diagnóstico Nutricional", [
+            f"Descripción: {desc_act_nutricional_state or '—'}",
+            f"Análisis relevantes: {relevant_analy_res or '—'}",
+            f"Observaciones de hábitos: {clin_hab_observs or '—'}",
+        ]),
+        ("3. Objetivos del Plan Nutricional", [
+            f"Objetivo principal: {user_data.get('objetivo') or '—'}",
+            f"Objetivos secundarios: {objetivos_secundarios or '—'}",
+            f"Plazo estimado: {plazo_estimado or '—'}",
+        ]),
+        ("4. Estrategia Nutricional", [
+            f"Alimentación recomendada: {al_rec or '—'}",
+            "Justificación:",
+            (just_plan or "—"),
+            f"Restricciones/Preferencias: {restrictions or '—'}",
+        ]),
+        ("5. Reparto de Macronutrientes (Diario Aproximado)", reparto_macros_text.splitlines()),
+        ("7. Recomendaciones Generales", [
+            f"Hidratación: mínimo {hidra} L/día",
+            f"Actividad física: {fr_act_fis or '—'}",
+            f"Sueño: {cal_horas_sueno or '—'}",
+            f"Suplementación: {supl_rec or '—'}",
+        ]),
+        ("8. Indicaciones y Sugerencias Personalizadas", [cons_esp or "—"]),
+        ("9. Seguimiento y Reevaluación", [
+            f"Primera revisión: {prim_rev_sug or '—'}",
+            f"Parámetros a evaluar: {param_ev_seg or '—'}",
+            f"Frecuencia de revisiones: {frec_rec_rev or '—'}",
+        ]),
+    ]
+    basic_pdf = build_basic_pdf(nombre, user_data, secs, pdf_blocks)
+    if basic_pdf is None:
+        st.info("⚠️ Para exportar a PDF instala `reportlab` (pip install reportlab).")
+    else:
+        st.download_button(
+            "⬇️ Descargar PDF (básico)",
+            data=basic_pdf,
+            file_name=f"Plan_{(nombre or 'cliente').replace(' ', '_')}.pdf",
+            mime="application/pdf",
+        )
+
+    # ---------- SI HAY PLANTILLA, además ofrece tu descarga con placeholders ----------
+    if template_file is not None:
+        mapping = {
+            "{{NOMBRE_COMPLETO}}": str(nombre or "—"),
+            "{{EDAD}}": str(edad or "—"),
+            "{{SEXO}}": str(sexo or "—"),
+            "{{PESO_KG}}": f"{float(user_data.get('peso') or 0):.1f}" if user_data.get("peso") else "—",
+            "{{ESTATURA_CM}}": f"{float(user_data.get('estatura') or 0):.1f}" if user_data.get("estatura") else "—",
+            "{{IMC}}": f"{float(user_data.get('imc')):.1f}" if user_data.get("imc") is not None else "—",
+            "{{GRASA_PCT}}": f"{float(user_data.get('grasa') or 0):.1f}" if user_data.get("grasa") is not None else "—",
+            "{{MASA_MUSCULAR_PCT}}": f"{float(user_data.get('masa_muscular') or 0):.1f}" if user_data.get("masa_muscular") is not None else "—",
+            "{{OBJETIVO_PRINCIPAL}}": str(user_data.get("objetivo") or "—"),
+
+            "{{DESC_EST_NUT_ACT}}": str(desc_act_nutricional_state or "—"),
+            "{{RES_AN_R}}": str(relevant_analy_res or "—"),
+            "{{OBS_CLI_HAB}}": str(clin_hab_observs or "—"),
+
+            "{{OBJS_SECS}}": str(objetivos_secundarios or "—"),
+            "{{PLA_EST}}": str(plazo_estimado or "—"),
+
+            "{{AL_REC}}": str(al_rec or "—"),
+            "{{JUST_PL}}": str(just_plan or "—"),
+            "{{REST_PREF_AL}}": str(restrictions or "—"),
+
+            "{{CALORIAS_OBJ}}": str(calories),
+            "{{PROTEINA_OBJ}}": str(protein),
+            "{{AZUCAR_OBJ}}": str(sugar),
+            "{{CARB_OBJ}}": str(carbohydrates),
+            "{{GR _OBJ}}": str(fat),  # ese placeholder raro de tu plantilla
+
+            "{{DESAYUNO}}": secs.get("DESAYUNO", "") or "—",
+            "{{COMIDA}}": secs.get("COMIDA", "") or "—",
+            "{{CENA}}": secs.get("CENA", "") or "—",
+            "{{MERIENDA}}": secs.get("MERIENDA", "") or "—",
+
+            "{{HIDRA}}": str(hidra),
+            "{{FR_ACT_FIS}}": str(fr_act_fis or "—"),
+            "{{CAL_HORS_SUEÑ_REC}}": str(cal_horas_sueno or "—"),
+            "{{SUPL_REC}}": str(supl_rec or "—"),
+
+            "{{CONS_ESP_EST_CLI}}": str(cons_esp or "—"),
+            "{{PRIM_REV_SUG}}": str(prim_rev_sug or "—"),
+            "{{PARAM_EV_SEG}}": str(param_ev_seg or "—"),
+            "{{FREC_REC_REV}}": str(frec_rec_rev or "—"),
+
+            "{{REPARTO_MACROS}}": reparto_macros_text,
+            "{{RECOMENDACIONES}}": "- Hidratación: mantener 1.5–2 L/día.\n- Verduras en 2+ comidas.\n- Ajustar raciones a saciedad.",
+            "{{INDICACIONES}}": "Priorizar alimentos frescos y proteína magra. Reducir ultraprocesados.",
+            "{{SEGUIMIENTO}}": "Revisión en 4–6 semanas.",
+            "{{OBSERVACIONES}}": parsed.get("observaciones_finales","—"),
+        }
+
+        filled = fill_docx_template(template_file, mapping)
+        nombre_archivo = f"Plan_{(nombre or 'cliente').replace(' ', '_')}.docx"
+        st.download_button(
+            "⬇️ Descargar plan (plantilla rellenada)",
+            data=filled,
+            file_name=nombre_archivo,
+            mime="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        )
 else:
-    st.info("Primero genera el plan y luego podrás descargar la plantilla rellenada.")
+    st.info("Genera el plan para habilitar las descargas.")
+
